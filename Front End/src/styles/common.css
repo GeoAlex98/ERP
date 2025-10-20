@@ -1,0 +1,288 @@
+.moduleBody {
+  font-family: Arial, sans-serif;
+  padding-top: 40px;
+  background-color: #f3f4f6; /* fallback */
+  background-image: url("/src/assets/ModuleBackground.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  //min-height: 100vh;
+  height: calc(100vh - 60px);
+}
+
+
+.moduleFormBackground {
+  background: rgba(255, 255, 255, 0.4); /* white with transparency */
+  border-radius: 6px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  padding: "10px 0"
+}
+
+/* Hide scrollbar but allow scrolling */
+.hide-scrollbar {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;     /* Firefox */
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;             /* Chrome, Safari, Opera */
+}
+
+.table-container {
+  position: relative;
+  width: 100%;
+  height: 300px;
+  overflow-y: auto;
+}
+
+.no-spinner::-webkit-outer-spin-button,
+.no-spinner::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.no-spinner[type=number] {
+  -moz-appearance: textfield;
+}
+
+
+
+
+
+
+
+
+
+.loading-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0,0,0,0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 99999;
+
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.loading-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.spinner-border {
+  width: 60px;
+  height: 60px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.dot-loader {
+  display: flex;
+  gap: 8px;
+}
+.dot-loader span {
+  width: 10px;
+  height: 10px;
+  background: black;
+  border-radius: 50%;
+  animation: bounce 0.6s infinite alternate;
+}
+.dot-loader span:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.dot-loader span:nth-child(3) {
+  animation-delay: 0.4s;
+}
+@keyframes bounce {
+  to {
+    opacity: 0.3;
+    transform: translateY(-6px);
+  }
+}
+
+
+
+
+
+/* commonStyles.css */
+
+/* Card container */
+.module-card {
+    border-radius: 15px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.85); /* half-transparent white */
+    display: flex;
+    flex-direction: column;
+}
+
+/* Buttons */
+.btn-common {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    border-radius: 6px;
+    padding: 6px 12px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+}
+.btn-primary { background: #3b82f6; color: #fff; }
+.btn-primary:hover { background: #2563eb; }
+.btn-success { background: #10b981; color: #fff; }
+.btn-success:hover { background: #059669; }
+.btn-danger { background: #ef4444; color: #fff; }
+.btn-danger:hover { background: #dc2626; }
+.btn-secondary { background: #6b7280; color: #fff; }
+.btn-secondary:hover { background: #4b5563; }
+.btn-info { background: #0ea5e9; color: #fff; }
+.btn-info:hover { background: #0284c7; }
+
+/* Form fields */
+.input-common {
+    width: 100%;
+    padding: 10px 12px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    transition: border 0.2s;
+}
+.input-common:focus {
+    outline: none;
+    border-color: #3b82f6;
+}
+
+/* Labels */
+.label-common {
+    font-weight: 600;
+    margin-bottom: 4px;
+    display: block;
+}
+
+/* Sticky header */
+.sticky-header {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    padding: 10px 0;
+    background: rgba(255,255,255,0.85); /* half-transparent */
+}
+
+/* Notification */
+.notification {
+    position: fixed;
+    top: 7px;
+    right: 5px;
+    z-index: 9999;
+    border-radius: 8px;
+    padding: 10px 20px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    background: rgba(255,255,255,0.9);
+    font-weight: 500;
+}
+
+/* Fullscreen overlay */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0,0,0,0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1200;
+}
+
+/* Modal container */
+.modal-container {
+    background: rgba(255,255,255,0.95);
+    border-radius: 10px;
+    padding: 20px;
+    max-width: 600px;
+    max-height: 85vh;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+}
+
+/* Table */
+.table-common {
+    width: 100%;
+    border-collapse: collapse;
+}
+.table-common th, .table-common td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+}
+.table-common th {
+    background-color: #1f2937;
+    color: #fff;
+    font-weight: bold;
+}
+
+/* Image container */
+.img-circle {
+    width: 280px;
+    height: 280px;
+    border-radius: 50%;
+    overflow: hidden;
+    background: #f3f4f6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Input group with icon */
+.input-group-icon {
+    display: flex;
+    align-items: center;
+}
+.input-group-icon input {
+    flex: 1;
+}
+.input-group-icon span {
+    cursor: pointer;
+}
+
+/* Hidden scrollbar (for modals) */
+.hidden-scroll::-webkit-scrollbar { display: none; }
+.hidden-scroll { -ms-overflow-style: none; scrollbar-width: none; }
+
+
+/* Make all form controls have visible borders */
+.form-control, .form-select, textarea {
+  border: 1px solid #ccc !important;
+  border-radius: 6px !important;
+  box-shadow: none !important;
+}
+
+.form-control:focus, .form-select:focus, textarea:focus {
+  border-color: #007bff !important;
+  box-shadow: 0 0 0 0.2rem rgba(0,123,255,.25) !important;
+}
+
+/* Table borders visible */
+.table th, .table td {
+  border: 1px solid #ccc !important;
+}
+
+/* Optional: Highlight row on hover */
+.table-hover tbody tr:hover {
+  background-color: #f1f1f1;
+}
